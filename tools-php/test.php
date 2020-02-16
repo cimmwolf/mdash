@@ -1,7 +1,7 @@
 <?php
 
 
-require_once("../EMT.php");
+require_once("../src-php/EMT.php");
 require_once("../lib/lib.php");
 require_once("../lib/EMT.Test.php");
 require_once("../lib/fs.php");

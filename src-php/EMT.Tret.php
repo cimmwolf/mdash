@@ -207,8 +207,8 @@ class EMT_Tret {
 						return;
 					}
 					$this->error('Функция '.$rule['function'].' из правила '.$rule['id']. " не найдена");
-				} else {
-					$this->_text = preg_replace_callback($rule['pattern'],  create_function('$m', $rule['function']), $this->_text);
+				} elseif (is_callable($rule['function'])) {
+					$this->_text = preg_replace_callback($rule['pattern'],  $rule['function'], $this->_text);
 					$this->log('Замена с использованием preg_replace_callback с инлайн функцией из правила '.$rule['id']);
 					return;
 				}
